@@ -1,0 +1,33 @@
+/*Watermark*/
+:root:before {
+
+    /*display: none;*/
+    display: block;
+
+    width: 100%;
+    position: fixed;
+    text-align: center;
+    font-size: 5em;
+    color: #000000;
+    opacity: 0.10;
+    top: 0;
+    z-index: 1000;
+}
+
+@media (min-width: 1366px){
+    :root:before {
+        content: "Computers";
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1365px){
+    :root:before {
+        content: "Tablets";
+    }
+}
+
+@media (max-width: 767px) {
+    :root:before {
+        content: "Phones";
+    }
+}
