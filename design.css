@@ -1,0 +1,69 @@
+.no-scroll{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.no-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+body{
+    background-image: url("bg.png");
+    background-color: #ffffff;
+}
+
+#page{
+    background-color: #ffffff;
+}
+
+#bumper {
+    background-image: url("RunningMomsBanner.jpg");
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#bumper a {
+    display: block;
+    height: 60px;
+    border-radius: 15px;
+    font-size: 30px;
+    line-height: 50px;
+    text-align: center;
+
+    border: 1px solid #dedede;
+    background-color: white;
+    color: hotpink;
+}
+
+#bumper #carey {
+    border-radius: 50%;
+    height: 175px;
+}
+
+#bumper {
+    font-family: "Racing Sans One";
+}
+
+#bumper .title {
+    font-size: xx-large;
+
+    color: #ffffff;
+    text-shadow: -1px -1px 0 #666666,
+    1px -1px 0 #666666,
+    -1px 1px 0 #666666,
+    1px 1px 0 #666666;
+}
+
+#testimonials{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.hs{
+    overflow-x: scroll;
+    scroll-snap-type: x proximity;
+}
+
+.hs > *{
+    scroll-snap-align: center;
+}

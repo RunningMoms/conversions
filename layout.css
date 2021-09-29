@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+}
+
+#page {
+    grid-area: page;
+
+    display: grid;
+    grid-template:
+                400px
+                150px
+                400px
+                min-content
+                    / 1fr;
+    grid-template-areas:
+        "bumper"
+        "."
+        "testimonials"
+        "pricing-options";
+}
+
+#bumper {
+    grid-area: bumper;
+
+    display: grid;
+    grid-template:
+                    100px
+                    200px
+                    100px
+                    / 40px 8fr 2fr 300px 1fr;
+
+    grid-template-areas:
+            ". . . . ."
+            ". . title title ."
+            ". pic . button .";
+}
+
+#bumper #carey {
+    grid-area: pic;
+}
+
+#bumper .title {
+    grid-area: title;
+}
+
+#bumper a {
+    grid-area: button;
+}
+
+#testimonials{
+    grid-area: testimonials;
+}
+
+.hs{
+    display: grid;
+    grid-auto-flow: column;
+    justify-items: center;
+    grid-gap: 10px;
+}
+
+#pricing-options{
+    grid-area: pricing-options;
+    grid-row-gap: 7em;
+    display: grid;
+    justify-items: center;
+}
+
+.pricing-option{
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: 3em 1fr 2em;
+}
+
+@media (min-width: 768px) {
+    body {
+        grid-template:
+            100vh
+                /   1fr minmax(768px, 1600px) 1fr;
+
+        grid-template-areas:
+                    ". page .";
+    }
+
+    #page {
+        border-right: 1px solid #dedede;
+        border-left: 1px solid #dedede;
+    }
+
+    .hs > * {
+        width: 45vw;
+        max-width: 400px;
+    }
+
+    #pricing-options{
+        grid-auto-flow: column;
+    }
+}
+
+@media (max-width: 767px) {
+    body {
+        grid-template:
+            100vh
+                /   100vw;
+
+        grid-template-areas:
+                    "page";
+    }
+
+    .hs > * {
+        width: 75vw;
+    }
+
+}
