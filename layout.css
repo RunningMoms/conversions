@@ -16,13 +16,15 @@ body {
     grid-template:
                 400px
                 150px
-                400px
+                min-content
+                5em
                 min-content
                     / 1fr;
     grid-template-areas:
         "bumper"
         "."
         "testimonials"
+        "."
         "pricing-options";
 }
 
@@ -51,32 +53,65 @@ body {
 }
 
 #bumper a {
-    grid-area: button;
+    display: none;
+    grid-area: buttoXn;
 }
 
-#testimonials{
+#testimonials {
     grid-area: testimonials;
 }
 
-.hs{
+.testimonial {
+
+    display: grid;
+
+    grid-template:
+    70px
+    min-content
+    min-content
+    /   1fr;
+
+    grid-template-areas:
+    "image"
+    "text"
+    "name";
+}
+
+
+.hs {
     display: grid;
     grid-auto-flow: column;
     justify-items: center;
-    grid-gap: 10px;
+    grid-gap: 2em;
 }
 
-#pricing-options{
+#pricing-options {
     grid-area: pricing-options;
-    grid-row-gap: 7em;
+
+    padding-left: 2em;
+    padding-right: 2em;
+
     display: grid;
+    grid-gap: 2em;
+    grid-row-gap: 7em;
     justify-items: center;
+
 }
 
-.pricing-option{
+.pricing-option {
     display: grid;
+
+    width: 100%;
+
     grid-auto-flow: row;
-    grid-template-rows: 3em 1fr 2em;
+    grid-template-rows: min-content 1fr min-content;
 }
+
+.pricing-option > *:nth-last-child(2){
+    padding-bottom: 1em;
+}
+
+
 
 @media (min-width: 768px) {
     body {
@@ -98,7 +133,7 @@ body {
         max-width: 400px;
     }
 
-    #pricing-options{
+    #pricing-options {
         grid-auto-flow: column;
     }
 }
