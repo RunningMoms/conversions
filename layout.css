@@ -19,13 +19,15 @@ body {
                 min-content
                 5em
                 min-content
+                min-content
                     / 1fr;
     grid-template-areas:
         "bumper"
         "."
         "testimonials"
         "."
-        "pricing-options";
+        "pricing-options"
+        "legal";
 }
 
 #bumper {
@@ -77,6 +79,11 @@ body {
     "name";
 }
 
+.testimonial img{
+    grid-area: image;
+    justify-self: center;
+}
+
 
 .hs {
     display: grid;
@@ -111,7 +118,9 @@ body {
     padding-bottom: 1em;
 }
 
-
+#legal{
+    grid-area: legal;
+}
 
 @media (min-width: 768px) {
     body {
@@ -140,6 +149,7 @@ body {
 
 @media (max-width: 767px) {
     body {
+        background-image: none !important;
         grid-template:
             100vh
                 /   100vw;
