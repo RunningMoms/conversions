@@ -9,6 +9,45 @@
     <link rel="prefetch" href="design.css">
     <link rel="stylesheet" href="design.css">
 
+    <script src="//cdn.trafficjam.io/v1.js"></script>
+    <script src="//checkout.stripe.com/checkout.js"></script>
+    <script>
+        var focus_offer_key;
+        var stripeHandler = StripeCheckout.configure({
+            key: 'pk_live_Hgrz280w9D3yOOPfipK2PaHr',
+            image: './Stripe-128x128.png',
+            locale: 'auto',
+
+            opened: function () {
+                console.log('Stripe opened');
+            },
+            closed: function () {
+                console.log('Stripe closed')
+            },
+
+            token: function (token) {
+                token.event = 'stripeToken';
+                token.offer = focus_offer_key;
+                broadcast(token);
+            }
+        });
+
+        function showStripe(amount, currency, description, offer_key){
+            amount *=100;
+            focus_offer_key = offer_key;
+            stripeHandler.open({
+                name: 'RunningMoms',
+                amount,
+                currency,
+                description,
+
+                billingAddress: true,
+                shippingAddress: false,
+                allowRememberMe: false,
+            });
+        }
+    </script>
+
 </head>
 <body>
 <div id="page">
@@ -82,7 +121,7 @@
             </ul>
 
             <div>
-                <button>
+                <button onclick="showStripe(27, 'USD', 'Workshop', 'IO901667324')">
                     <span>$49</span>
                     <span>$27</span>
                 </button>
