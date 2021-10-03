@@ -65,9 +65,7 @@
                 return;
             }
 
-            console.log(typeof message.message)
-
-            if (message.http_status == 200) {
+            if (message.http_status != 200) {
                 Swal.fire({
                     title: 'Try Again!',
                     text: message.message,
