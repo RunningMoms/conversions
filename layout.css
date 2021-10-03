@@ -121,11 +121,11 @@ body {
     grid-area: legal;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
     body {
         grid-template:
             100vh
-                /   1fr minmax(768px, 1600px) 1fr;
+                /   1fr minmax(1000px, 1600px) 1fr;
 
         grid-template-areas:
                     ". page .";
@@ -146,7 +146,7 @@ body {
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 999px) {
     body {
         background-image: none !important;
         grid-template:
