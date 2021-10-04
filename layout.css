@@ -1,5 +1,4 @@
-@import url('///fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
-@import url('///fonts.googleapis.com/icon?family=Material+Icons&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -16,10 +15,10 @@ body {
     grid-template:
                 400px
                 150px
-                min-content
-                5em
-                min-content
-                min-content
+                max-content
+                50px
+                max-content
+                max-content
                     / 1fr;
     grid-template-areas:
         "bumper"
@@ -28,6 +27,8 @@ body {
         "."
         "pricing-options"
         "legal";
+
+
 }
 
 #bumper {
@@ -69,8 +70,8 @@ body {
 
     grid-template:
     70px
-    min-content
-    min-content
+    1fr
+    max-content
     /   1fr;
 
     grid-template-areas:
@@ -99,22 +100,36 @@ body {
     padding-right: 2em;
 
     display: grid;
+    grid-auto-columns: 1fr;
     grid-gap: 2em;
-    grid-row-gap: 7em;
-    justify-items: center;
 }
 
 .pricing-option {
+
+
     display: grid;
 
-    width: 100%;
-
     grid-auto-flow: row;
-    grid-template-rows: min-content 1fr min-content;
+    grid-template-rows:
+            max-content
+            1fr
+            max-content;
 }
 
 .pricing-option > *:nth-last-child(2) {
     padding-bottom: 1em;
+}
+
+#pricing-options ul > li {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    padding-left: 14px;
+    padding-right: 14px;
+    margin-bottom: 21px;
+}
+
+#pricing-options ul > li:last-of-type {
+    margin-bottom: 0px;
 }
 
 #legal {
@@ -124,7 +139,7 @@ body {
 @media (min-width: 1000px) {
     body {
         grid-template:
-            100vh
+            max-content
                 /   1fr minmax(1000px, 1600px) 1fr;
 
         grid-template-areas:
@@ -150,26 +165,29 @@ body {
     body {
         background-image: none !important;
         grid-template:
-            100vh
+            max-content
                 /   100vw;
 
         grid-template-areas:
                     "page";
     }
 
-    #pricing-options{
+    #pricing-options {
         grid-template-areas:
         "a"
         "b"
         "c";
     }
-    .pricing-option:nth-child(1){
+
+    .pricing-option:nth-child(1) {
         grid-area: c;
     }
-    .pricing-option:nth-child(2){
+
+    .pricing-option:nth-child(2) {
         grid-area: b;
     }
-    .pricing-option:nth-child(3){
+
+    .pricing-option:nth-child(3) {
         grid-area: a;
     }
 
