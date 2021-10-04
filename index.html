@@ -12,6 +12,7 @@
     <link rel="prefetch" href="sweetalert2.min.css">
     <link rel="stylesheet" href="sweetalert2.min.css">
     <script src="sweetalert2.min.js"></script>
+    <script src="party.min.js"></script>
 
     <script src="//cdn.trafficjam.io/v1.js"></script>
     <script src="//checkout.stripe.com/checkout.js"></script>
@@ -161,7 +162,7 @@
             </ul>
 
             <div>
-                <button onclick="showStripe(27, 'USD', 'Workshop', 'IO901667324')">
+                <button onclick="party.sparkles(this); party.confetti(this); setTimeout(function(){showStripe(27, 'USD', 'Workshop', 'IO901667324')}, 1500)">
                     <span>$49</span>
                     <span>$27</span>
                 </button>
