@@ -161,6 +161,17 @@ body {
     text-align: center;
 }
 
+.pricing-option h2{
+    margin-top: 20px;
+    text-align: center;
+    color: goldenrod;
+    font-size: 1.2em;
+}
+.pricing-option p{
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
 button{
     cursor: pointer;
 
