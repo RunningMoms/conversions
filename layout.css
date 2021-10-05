@@ -43,12 +43,22 @@ body {
 
     grid-template-areas:
             ". . . . ."
-            ". . title title ."
+            ". logo title title ."
             ". pic . button .";
 }
 
 #bumper #carey {
     grid-area: pic;
+}
+
+#bumper .logo{
+    grid-area: logo;
+    justify-self: right;
+    margin-right: 35px;
+
+    display: block;
+    width: 145px;
+    border-radius: 50%;
 }
 
 #bumper .title {
