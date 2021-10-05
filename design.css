@@ -1,5 +1,4 @@
 @import url('///fonts.googleapis.com/css2?family=Racing+Sans+One');
-@import url('///fonts.googleapis.com/css2?family=Delius+Swash+Caps');
 @import url('///fonts.googleapis.com/css2?family=Kristi&display=swap');
 
 :root {
@@ -121,12 +120,12 @@ body {
 }
 
 .testimonial .quote{
-    font-family: 'Delius Swash Caps' !important;
-    font-size: 1.25em !important;
+
 }
 
 .testimonial .customer{
     text-transform: uppercase;
+    background-image: url("bg.png");
 }
 
 .testimonial .customer sub{
