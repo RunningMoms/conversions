@@ -1,4 +1,6 @@
 @import url('///fonts.googleapis.com/css2?family=Racing+Sans+One');
+@import url('///fonts.googleapis.com/css2?family=Delius+Swash+Caps');
+@import url('///fonts.googleapis.com/css2?family=Kristi&display=swap');
 
 :root {
     --radius: 15px;
@@ -78,7 +80,8 @@ body {
 
 #testimonials img {
     border-radius: 50%;
-    width: 140px;
+    max-width: 140px;
+    max-height: 140px;
 
     z-index: 1000;
 }
@@ -115,6 +118,15 @@ body {
     padding: 0.5em;
     font-size: 1.2em;
     text-align: right;
+}
+
+.testimonial .quote{
+    font-family: 'Delius Swash Caps' !important;
+    font-size: 1.25em !important;
+}
+
+.testimonial .customer{
+    text-transform: uppercase;
 }
 
 .testimonial .customer sub{
