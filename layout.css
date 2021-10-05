@@ -70,7 +70,7 @@ body {
 
     grid-template:
     70px
-    1fr
+    max-content
     max-content
     /   1fr;
 
@@ -83,6 +83,13 @@ body {
 .testimonial img {
     grid-area: image;
     justify-self: center;
+}
+
+.testimonial .quote{
+    height: 245px;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 
