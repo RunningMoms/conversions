@@ -69,6 +69,13 @@ body {
     1px 1px 0 #666666;
 }
 
+#bumper .title h1,
+#bumper .title h2{
+    display: block;
+    width: 250px;
+    text-align: center;
+}
+
 #bumper .title h1{
     font-size: 2em;
 }
