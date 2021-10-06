@@ -32,37 +32,33 @@ body {
 }
 
 #bumper {
+    padding-right: 7vw;
+    padding-left: 7vw;
+
     grid-area: bumper;
 
     display: grid;
-    grid-template:
-                    100px
-                    200px
-                    100px
-                    / 40px 8fr 2fr 300px 1fr;
-
-    grid-template-areas:
-            ". . . . ."
-            ". logo title title ."
-            ". pic . button .";
+    grid-auto-flow: row;
 }
 
 #bumper #carey {
-    grid-area: pic;
+
 }
 
 #bumper .logo{
-    grid-area: logo;
-    justify-self: right;
-    margin-right: 35px;
+    margin-top: 80px;
 
-    display: block;
-    width: 145px;
+
+    justify-self: center;
+
+    width: 150px;
     border-radius: 50%;
 }
 
 #bumper .title {
-    grid-area: title;
+
+    justify-self: center;
+    margin-bottom: 20px;
 }
 
 #bumper a {
@@ -210,6 +206,10 @@ body {
 
     .hs > * {
         width: 75vw;
+    }
+
+    #bumper #carey {
+        justify-self: center;
     }
 
 }
