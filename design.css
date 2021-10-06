@@ -69,6 +69,13 @@ body {
     1px 1px 0 #666666;
 }
 
+#bumper .title h1{
+    font-size: 2em;
+}
+#bumper .title h2{
+    font-size: 1.6em;
+}
+
 #testimonials *{
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
 }
