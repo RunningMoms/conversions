@@ -5,12 +5,12 @@
     --radius: 15px;
 }
 
-.no-scroll {
+.no-scroll-bar {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
 }
 
-.no-scroll::-webkit-scrollbar {
+.no-scroll-bar::-webkit-scrollbar {
     display: none;
 }
 
@@ -78,6 +78,8 @@ body {
 }
 
 #testimonials img {
+
+
     border-radius: 50%;
     max-width: 140px;
     max-height: 140px;
@@ -86,7 +88,7 @@ body {
 }
 
 .testimonial > div {
-    border-left: 1px solid #dedede;
+    border-left: 1px solid #cccccc;
     border-right: 1px solid #dedede;
 
     padding-left: 0.7em;
@@ -134,7 +136,8 @@ body {
 
 .hs {
     overflow-x: scroll;
-    scroll-snap-type: x proximity;
+    /*scroll-snap-type: x proximity;*/
+    scroll-snap-type: x mandatory;
 }
 
 .hs > * {

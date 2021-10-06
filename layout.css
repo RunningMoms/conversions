@@ -78,7 +78,7 @@ body {
     70px
     max-content
     max-content
-    /   1fr;
+    /   0.95fr;
 
     grid-template-areas:
     "image"
@@ -88,7 +88,7 @@ body {
 
 .testimonial img {
     grid-area: image;
-    justify-self: center;
+    margin-left: calc(0% - 20px);
 }
 
 .testimonial .quote{
@@ -103,7 +103,7 @@ body {
     display: grid;
     grid-auto-flow: column;
     justify-items: center;
-    grid-gap: 2em;
+    grid-gap: 1em;
 }
 
 #pricing-options {
