@@ -109,15 +109,16 @@
             }
         }
 
-
+        var observed = false;
         document.addEventListener("DOMContentLoaded", function () {
             bindEvent(window, "message", trafficJamEventHandler);
 
             const OBSERVER = new IntersectionObserver((entries) => {
 
                 entries.forEach((entry, index) => {
-                    if (entry.isIntersecting) {
-                        fbq('track', 'ViewContent', {content_ids: [index]});
+                    if (!observed && entry.isIntersecting) {
+                        fbq('track', 'ViewContent', {content_type: 'product', content_ids: [index]});
+                        observed = true;
                     }
                 })
             });
