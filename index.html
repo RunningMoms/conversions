@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
 
     <title>RunningMoms</title>
 
@@ -23,12 +23,34 @@
     <script src="confetti.js"></script>
     <script src="party.min.js"></script>
 
+    <!-- Facebook Pixel Code -->
     <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '3124635714431496');
+        fbq('track', 'PageView');
 
         var TRAFFICJAM_DOMAIN = 'IO2130315041';
         var focus_offer_key;
         var stripeHandler = StripeCheckout.configure({
-            key: 'pk_live_Hgrz280w9D3yOOPfipK2PaHr',
+            /*key: 'pk_live_Hgrz280w9D3yOOPfipK2PaHr',*/
+            key: 'pk_test_SUBTHFPtvx5TceT6AuJdXoxb',
             image: './Stripe-128x128.png',
             locale: 'auto',
 
@@ -47,7 +69,9 @@
             }
         });
 
+        var fbamt;
         function showStripe(amount, currency, description, offer_key) {
+            fbamt = parseInt(amount)/100;
             amount *= 100;
             focus_offer_key = offer_key;
             stripeHandler.open({
@@ -77,6 +101,7 @@
                     confirmButtonText: 'Close'
                 });
             } else {
+                fbq('track', 'Purchase', {currency: "USD", value: fbamt});
                 startConfetti();
                 Swal.fire({
                     title: 'Success!',
@@ -181,7 +206,8 @@
             <div class="quote">
                 I am in my 50's, college age kids so it is my time. Running, calorie deficit was not working. The
                 strengthening program along with eating properly and reducing inflammation has totally changed my body.
-                I eat more now than I did in college playing varsity sports and I do not believe I am eating enough! In 2
+                I eat more now than I did in college playing varsity sports and I do not believe I am eating enough! In
+                2
                 months I have not lost much weight but I have lost inches everywhere, I have not gotten injured which
                 has happened before and I can run on the days I run. After 2 months I am strong and fit. I believe the
                 weight will slowly come off in the next few months, slowly and properly but i am not obsessed with it -I
