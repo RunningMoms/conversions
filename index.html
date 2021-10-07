@@ -119,7 +119,7 @@
             const OBSERVER = new IntersectionObserver((entries) => {
                 entries.forEach((entry, index) => {
                     if (entry.isIntersecting) {
-                        fbq('track', 'ViewContent', {content_ids: index});
+                        fbq('track', 'ViewContent', {content_ids: [index]});
                     }
                 })
             });
