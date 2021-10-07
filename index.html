@@ -48,30 +48,27 @@
 
         var TRAFFICJAM_DOMAIN = 'IO2130315041';
         var focus_offer_key;
+        var focus_offer_amount;
         var stripeHandler = StripeCheckout.configure({
             key: 'pk_live_Hgrz280w9D3yOOPfipK2PaHr',
             image: './Stripe-128x128.png',
             locale: 'auto',
 
             opened: function () {
-                //console.log('Stripe opened');
             },
             closed: function () {
-                //console.log('Stripe closed')
             },
 
             token: function (token) {
                 token.event = 'stripeToken';
                 token.offer = focus_offer_key;
-                //console.log(token);
                 broadcast(token);
             }
         });
 
-        var fbamt;
 
         function showStripe(amount, currency, description, offer_key) {
-            fbamt = parseInt(amount) / 100;
+            focus_offer_amount = parseInt(amount) / 100;
             amount *= 100;
             focus_offer_key = offer_key;
             stripeHandler.open({
@@ -101,7 +98,7 @@
                     confirmButtonText: 'Close'
                 });
             } else {
-                fbq('track', 'Purchase', {currency: "USD", value: fbamt});
+                fbq('track', 'Purchase', {currency: "USD", value: focus_offer_amount});
                 startConfetti();
                 Swal.fire({
                     title: 'Success!',
@@ -117,6 +114,7 @@
             bindEvent(window, "message", trafficJamEventHandler);
 
             const OBSERVER = new IntersectionObserver((entries) => {
+
                 entries.forEach((entry, index) => {
                     if (entry.isIntersecting) {
                         fbq('track', 'ViewContent', {content_ids: [index]});
@@ -126,6 +124,7 @@
 
             OBSERVER.observe(document.querySelector('.view-tracking'));
         });
+
     </script>
 
 </head>
@@ -198,7 +197,7 @@
             </div>
         </div>
 
-        <div class="testimonial view-tracking">
+        <div class="testimonial">
             <img src="testimonials/03/photo.jpg">
 
             <div class="quote">
@@ -230,7 +229,7 @@
             </div>
         </div>
 
-        <div class="testimonial">
+        <div class="testimonial view-tracking">
             <img src="testimonials/23/photo.jpg">
 
             <div class="quote">
@@ -506,7 +505,7 @@
             </ul>
 
             <div>
-                <button class="view-tracking" onclick="party.sparkles(this); party.confetti(this); setTimeout(function(){showStripe(27, 'USD', 'Workshop', 'IO901667324')}, 1200)">
+                <button onclick="party.sparkles(this); party.confetti(this); setTimeout(function(){showStripe(27, 'USD', 'Workshop', 'IO901667324')}, 1200)">
                     <span>$49</span>
                     <span>$27</span>
                 </button>
@@ -539,7 +538,7 @@
             </ul>
 
             <div>
-                <button class="view-tracking" onclick="party.sparkles(this); party.confetti(this); setTimeout(function(){showStripe(47, 'USD', 'Bootcamp', 'IO1462563831')}, 1200)">
+                <button onclick="party.sparkles(this); party.confetti(this); setTimeout(function(){showStripe(47, 'USD', 'Bootcamp', 'IO1462563831')}, 1200)">
                     <span>$97</span>
                     <span>$47</span>
                 </button>
@@ -572,7 +571,7 @@
             </ul>
 
             <div>
-                <button class="view-tracking" onclick="party.sparkles(this); party.confetti(this); setTimeout(function(){showStripe(947, 'USD', 'Coaching', 'IO2026014194')}, 1200)">
+                <button onclick="party.sparkles(this); party.confetti(this); setTimeout(function(){showStripe(947, 'USD', 'Coaching', 'IO2026014194')}, 1200)">
                     <span style="text-decoration: none;">$947</span>
                 </button>
             </div>
