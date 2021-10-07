@@ -54,10 +54,10 @@
             locale: 'auto',
 
             opened: function () {
-                console.log('Stripe opened');
+                //console.log('Stripe opened');
             },
             closed: function () {
-                console.log('Stripe closed')
+                //console.log('Stripe closed')
             },
 
             token: function (token) {
@@ -69,8 +69,9 @@
         });
 
         var fbamt;
+
         function showStripe(amount, currency, description, offer_key) {
-            fbamt = parseInt(amount)/100;
+            fbamt = parseInt(amount) / 100;
             amount *= 100;
             focus_offer_key = offer_key;
             stripeHandler.open({
@@ -111,8 +112,19 @@
             }
         }
 
+
         document.addEventListener("DOMContentLoaded", function () {
             bindEvent(window, "message", trafficJamEventHandler);
+
+            const OBSERVER = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        fbq('track', 'ViewContent', {content_ids: index});
+                    }
+                })
+            });
+
+            OBSERVER.observe(document.querySelector('.view-tracking'));
         });
     </script>
 
@@ -186,7 +198,7 @@
             </div>
         </div>
 
-        <div class="testimonial">
+        <div class="testimonial view-tracking">
             <img src="testimonials/03/photo.jpg">
 
             <div class="quote">
@@ -494,7 +506,7 @@
             </ul>
 
             <div>
-                <button onclick="party.sparkles(this); party.confetti(this); setTimeout(function(){showStripe(27, 'USD', 'Workshop', 'IO901667324')}, 1200)">
+                <button class="view-tracking" onclick="party.sparkles(this); party.confetti(this); setTimeout(function(){showStripe(27, 'USD', 'Workshop', 'IO901667324')}, 1200)">
                     <span>$49</span>
                     <span>$27</span>
                 </button>
@@ -527,7 +539,7 @@
             </ul>
 
             <div>
-                <button onclick="party.sparkles(this); party.confetti(this); setTimeout(function(){showStripe(47, 'USD', 'Bootcamp', 'IO1462563831')}, 1200)">
+                <button class="view-tracking" onclick="party.sparkles(this); party.confetti(this); setTimeout(function(){showStripe(47, 'USD', 'Bootcamp', 'IO1462563831')}, 1200)">
                     <span>$97</span>
                     <span>$47</span>
                 </button>
@@ -560,7 +572,7 @@
             </ul>
 
             <div>
-                <button onclick="party.sparkles(this); party.confetti(this); setTimeout(function(){showStripe(947, 'USD', 'Coaching', 'IO2026014194')}, 1200)">
+                <button class="view-tracking" onclick="party.sparkles(this); party.confetti(this); setTimeout(function(){showStripe(947, 'USD', 'Coaching', 'IO2026014194')}, 1200)">
                     <span style="text-decoration: none;">$947</span>
                 </button>
             </div>
