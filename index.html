@@ -117,7 +117,7 @@
 
                 entries.forEach((entry, index) => {
                     if (observed.indexOf(index) === -1 && entry.isIntersecting) {
-                        fbq('track', 'ViewContent', {content_type: 'product_group', content_ids: [index]});
+                        //fbq('track', 'ViewContent', {content_type: 'product_group', content_ids: [index]});
                         observed.push(index);
                     }
                 })
