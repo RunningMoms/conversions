@@ -577,11 +577,12 @@
     </div>
 
     <div id="legal">
-        <p>&copy;<script>document.write(new Date().getFullYear())</script>
-            Carey Adam<br/>Payments are non-refundable.
-        </p>
+        <p>&copy;<span id="year"></span> Carey Adam<br/>Payments are non-refundable.</p>
     </div>
 
 </div>
+<script>
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+</script>
 </body>
 </html>
