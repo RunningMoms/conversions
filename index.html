@@ -59,7 +59,11 @@
         }
 
         function trafficJamEventHandler(message) {
-            message = JSON.parse(message.data);
+            try {
+                message = JSON.parse(message.data);
+            } catch (e) {
+                return;
+            }
 
             if (typeof message.package == 'undefined' || message.package != 'trafficjam' || typeof message.message == 'undefined') {
                 return;
