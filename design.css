@@ -29,15 +29,7 @@ body {
 }
 
 @media (min-height: 600px) {
-    #bumper {
-        scroll-snap-align: start end !important;
-    }
-
-    #testimonials {
-        scroll-snap-align: start end !important;
-    }
-
-    .pricing-option {
+    #bumper, #testimonials, .pricing-option {
         scroll-snap-align: start end !important;
     }
 }
