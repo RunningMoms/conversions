@@ -20,6 +20,7 @@
     <script src="confetti.js"></script>
     <script src="party.min.js"></script>
 
+
     <script>
         var TRAFFICJAM_DOMAIN = 'IO2130315041';
         var focus_offer_key;
@@ -59,9 +60,9 @@
         }
 
         function trafficJamEventHandler(message) {
-            try {
+            try{
                 message = JSON.parse(message.data);
-            } catch (e) {
+            }catch (e) {
                 return;
             }
 
@@ -580,12 +581,11 @@
     </div>
 
     <div id="legal">
-        <p>&copy;<span id="year"></span> Carey Adam<br/>Payments are non-refundable.</p>
+        <p>&copy;<script>document.write(new Date().getFullYear())</script>
+            Carey Adam<br/>Payments are non-refundable.
+        </p>
     </div>
 
 </div>
-<script>
-    document.getElementById("year").innerHTML = new Date().getFullYear();
-</script>
 </body>
 </html>
