@@ -17,6 +17,8 @@
 body {
     background-image: url("bg.png");
     background-color: #ffffff;
+
+    padding-bottom: env(safe-area-inset-bottom);
 }
 
 #page {
@@ -28,15 +30,15 @@ body {
 
 @media (min-height: 600px) {
     #bumper {
-        scroll-snap-align: start !important;
+        scroll-snap-align: start end !important;
     }
 
     #testimonials {
-        scroll-snap-align: start !important;
+        scroll-snap-align: start end !important;
     }
 
     .pricing-option {
-        scroll-snap-align: start !important;
+        scroll-snap-align: start end !important;
     }
 }
 
