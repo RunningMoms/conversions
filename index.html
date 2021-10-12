@@ -56,9 +56,9 @@
         }
 
         function trafficJamEventHandler(message) {
-            try{
+            try {
                 message = JSON.parse(message.data);
-            }catch (e) {
+            } catch (e) {
                 return;
             }
 
@@ -87,6 +87,17 @@
 
         var observed = [];
         document.addEventListener("DOMContentLoaded", function () {
+
+            function deferImgs() {
+                Array
+                    .from(document.querySelectorAll("img[data-src-defer]"))
+                    .forEach((element) => {
+                        element.setAttribute("src", element.dataset.srcDefer);
+                    });
+            }
+
+            window.addEventListener("load", deferImgs());
+
 
             !function (f, b, e, v, n, t, s) {
                 if (f.fbq) return;
@@ -123,6 +134,8 @@
             });
 
             OBSERVER.observe(document.querySelector('.view-tracking'));
+
+
         });
 
     </script>
@@ -198,7 +211,9 @@
         </div>
 
         <div class="testimonial">
-            <img src="testimonials/03/photo.webp">
+            <img
+                    src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                    data-src-defer="testimonials/03/photo.webp">
 
             <div class="quote">
                 Ok was a bit of skeptic on the program- but Iust finished 11.15 km in 55mins. Yeah! That's my fastest
@@ -212,7 +227,8 @@
 
         <div class="testimonial">
 
-            <img src="testimonials/24/photo.webp"/>
+            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                 data-src-defer="testimonials/24/photo.webp"/>
             <div class="quote">
                 I am in my 50's, college age kids so it is my time. Running, calorie deficit was not working. The
                 strengthening program along with eating properly and reducing inflammation has totally changed my body.
@@ -230,7 +246,8 @@
         </div>
 
         <div class="testimonial view-tracking">
-            <img src="testimonials/23/photo.webp">
+            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                 data-src-defer="testimonials/23/photo.webp">
 
             <div class="quote">
                 Carey Adam! Thank you for putting this program together! My husband is strength &amp; speed training
@@ -244,7 +261,8 @@
         </div>
 
         <div class="testimonial">
-            <img src="testimonials/22/photo.webp">
+            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                 data-src-defer="testimonials/22/photo.webp">
 
             <div class="quote">
                 I had to end the week STRONG, and before 9AM (Texas Heat). Did a run w/burst and the 5-4-3-2-1 (I missed
@@ -258,7 +276,8 @@
         </div>
 
         <div class="testimonial">
-            <img src="testimonials/21/photo.webp">
+            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                 data-src-defer="testimonials/21/photo.webp">
 
             <div class="quote">
                 My core has never been stronger and I have not eaten so much food since college! Training smarter not
@@ -271,7 +290,8 @@
         </div>
 
         <div class="testimonial">
-            <img src="testimonials/20/photo.webp">
+            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                 data-src-defer="testimonials/20/photo.webp">
             <div class="quote">
                 Feeling fabulous today. This program is helping me to feel powerful &amp; beautiful! Thanks Carey!!
             </div>
@@ -281,7 +301,8 @@
         </div>
 
         <div class="testimonial">
-            <img src="testimonials/17/photo.webp">
+            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                 data-src-defer="testimonials/17/photo.webp">
 
             <div class="quote">
                 Carey Adam I listened to the first and second podcast so far, I've said it before &hellip; you speak my
@@ -299,7 +320,8 @@
         </div>
 
         <div class="testimonial">
-            <img src="testimonials/16/photo.webp">
+            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                 data-src-defer="testimonials/16/photo.webp">
             <div class="quote">
                 Today I did a 4 mile HITT run. When I joined this group I was struggling with longer distances. My
                 hormones were burnt out, I was having issues with my lungs and just wasn't enjoying it. I kept pushing
@@ -319,7 +341,8 @@
         </div>
 
         <div class="testimonial">
-            <img src="testimonials/15/photo.webp">
+            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                 data-src-defer="testimonials/15/photo.webp">
 
             <div class="quote">
                 From I have loved the last 4 weeks! I have two young kids who love to play with me and I was so sick of
@@ -336,7 +359,8 @@
         </div>
 
         <div class="testimonial">
-            <img src="testimonials/14/photo.webp">
+            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                 data-src-defer="testimonials/14/photo.webp">
             <div class="quote">
                 Best choice I ever made was to like and follow your page, and take your advice.
             </div>
@@ -347,7 +371,8 @@
         </div>
 
         <div class="testimonial">
-            <img src="testimonials/13/photo.webp">
+            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                 data-src-defer="testimonials/13/photo.webp">
 
             <div class="quote">
                 I love how vastly different I feel on every level: physically, mentally, psychologically, and
@@ -367,7 +392,8 @@
         </div>
 
         <div class="testimonial">
-            <img src="testimonials/12/photo.webp">
+            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                 data-src-defer="testimonials/12/photo.webp">
 
             <div class="quote">
                 I've loved it. All of it. Love the message, there, the workouts, the meal ideas, the philosophy. Love
@@ -381,7 +407,8 @@
         </div>
 
         <div class="testimonial">
-            <img src="testimonials/11/photo.webp">
+            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                 data-src-defer="testimonials/11/photo.webp">
 
             <div class="quote">
                 Forgot my sweaty selfie but ended with an 8.5 mile run. I absolutely love the way I feel when I run now.
@@ -395,7 +422,8 @@
         </div>
 
         <div class="testimonial">
-            <img src="testimonials/10/photo.webp">
+            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                 data-src-defer="testimonials/10/photo.webp">
 
             <div class="quote">
                 Im on track. W2D1 journal done, hydrated, and in love Thank you Carey Adam Crushed Iit in the workout! 3
@@ -414,7 +442,8 @@
         </div>
 
         <div class="testimonial">
-            <img src="testimonials/06/photo.webp">
+            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                 data-src-defer="testimonials/06/photo.webp">
 
             <div class="quote">
                 Before I started this program I was training for a half marathon. Got all the way up to completing a 15k
@@ -434,7 +463,8 @@
         </div>
 
         <div class="testimonial">
-            <img src="testimonials/04/photo.webp">
+            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                 data-src-defer="testimonials/04/photo.webp">
 
             <div class="quote">
                 Tabata and 3 mile run!! So glad I signed up. I feel stronger and sooo much
@@ -448,8 +478,8 @@
         </div>
 
         <div class="testimonial">
-
-            <img src="testimonials/02/photo.webp">
+            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                 data-src-defer="testimonials/02/photo.webp">
 
             <div class="quote">
                 This has been AMAZING!! Life changing. seriously. Thank you Carey Adam! I woke up early, got the workout
@@ -465,8 +495,8 @@
         </div>
 
         <div class="testimonial">
-
-            <img src="testimonials/01/photo.webp">
+            <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                 data-src-defer="testimonials/01/photo.webp">
 
             <div class="quote">
                 I'm so grateful for the results I'm seeing. In one month l start the training for my 3rd &amp; 4th half
