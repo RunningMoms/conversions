@@ -230,7 +230,7 @@ button > span:first-of-type {
 
 button > span:nth-of-type(2) {
     font-weight: lighter;
-    font-size: 1em;
+    font-size: 0.7em;
     color: #777777;
 }
 
