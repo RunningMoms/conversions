@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +5,7 @@
 
 body {
     display: grid;
+    font-family: "AvenirNext","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 #page {
@@ -13,57 +13,23 @@ body {
 
     display: grid;
     grid-template:
-                400px
-                150px
                 max-content
-                50px
+                max-content
+                max-content
                 max-content
                 max-content
                     / 1fr;
     grid-template-areas:
-        "bumper"
-        "."
+        "video"
         "testimonials"
-        "."
         "pricing-options"
         "legal";
 
-
+    grid-row-gap: 50px;
 }
 
-#bumper {
-    padding-right: 7vw;
-    padding-left: 7vw;
-
-    grid-area: bumper;
-
-    display: grid;
-    grid-auto-flow: row;
-}
-
-#bumper #carey {
-
-}
-
-#bumper .logo{
-    margin-top: 80px;
-
-
-    justify-self: center;
-
-    width: 150px;
-    border-radius: 50%;
-}
-
-#bumper .title {
-
-    justify-self: center;
-    margin-bottom: 20px;
-}
-
-#bumper a {
-    display: none;
-    grid-area: buttoXn;
+#video{
+    grid-area: video;
 }
 
 #testimonials {
@@ -71,7 +37,6 @@ body {
 }
 
 .testimonial {
-
     display: grid;
 
     grid-template:
@@ -118,8 +83,6 @@ body {
 }
 
 .pricing-option {
-
-
     display: grid;
 
     grid-auto-flow: row;
@@ -131,14 +94,6 @@ body {
 
 .pricing-option > *:nth-last-child(2) {
     padding-bottom: 1em;
-}
-
-#pricing-options ul > li {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    padding-left: 14px;
-    padding-right: 14px;
-    margin-bottom: 21px;
 }
 
 #pricing-options ul > li:last-of-type {
@@ -207,9 +162,5 @@ body {
     .hs > * {
         width: 75vw;
     }
-
-    #bumper #carey {
-        justify-self: center;
-    }
-
 }
+
