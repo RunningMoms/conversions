@@ -67,8 +67,8 @@ body {
 #testimonials img {
 
     border-radius: 50%;
-    max-width: 140px;
-    max-height: 140px;
+    max-width: 100px;
+    max-height: 100px;
 
     z-index: 1000;
 }
@@ -91,7 +91,7 @@ body {
 }
 
 .testimonial > div:first-of-type {
-    padding-top: 80px;
+    padding-top: 60px;
     border-top: 1px solid #dedede;
 
     border-top-left-radius: var(--radius);
@@ -153,7 +153,7 @@ body {
 .pricing-option h2 {
     margin-top: 20px;
     text-align: center;
-    color: goldenrod;
+    color: #DAA520FF;
     font-size: 1.2em;
     margin-bottom: 10px;
 }
@@ -171,6 +171,7 @@ body {
 .pricing-option button {
     cursor: pointer;
     height: 60px;
+    background-color: #FF69B4FF;
     border-top: 1px solid #dfdfdf;
     border-right: 1px solid #ffffff;
     border-bottom: 1px solid #ffffff;
@@ -192,11 +193,13 @@ button > span{
 
 button > span:first-of-type {
     font-family: "Racing Sans One";
-    color: hotpink;
+    color: #dedede;
+    font-size: 1.4em;
 }
 
 button > span:nth-of-type(2) {
-    color: #777777;
+    color: #ffffff;
+    font-size: 1.6em;
 }
 
 #legal {
@@ -220,7 +223,7 @@ ul > li > span {
     width: 30px;
     height: 30px;
     line-height: 30px;
-    border: 1px solid hotpink;
+    border: 1px solid #FF69B4FF;
     color: mediumseagreen;
     border-radius: 50%;
     text-align: center;
