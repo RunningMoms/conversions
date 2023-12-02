@@ -47,7 +47,8 @@
 
 #page {
     background-color: #ffffff;
-    height: 100vh;
+    /* needed by div.video
+          height: 100vh;*/
 }
 
 body {
@@ -57,6 +58,28 @@ body {
     padding-bottom: env(safe-area-inset-bottom);
 
     font-family: 'Avenir Next';
+}
+
+#banner {
+
+    border-top: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+    background-image: url(../media/bg.png);
+
+    padding-bottom: 7px;
+}
+#banner h1 {
+    font-family: "Racing Sans One";
+    font-weight: 100;
+    text-align: center;
+    color: #FF69B4FF;
+
+
+}
+
+#banner h2{
+    text-align: center;
+    color: #666666;
 }
 
 #testimonials {
@@ -142,12 +165,17 @@ body {
 .pricing-option ul {
     font-size: larger;
 }
+.pricing-option ul:first-of-type li:first-child {
+    margin-top: 1.4em;
+}
 
 .pricing-option h1 {
     font-family: "Racing Sans One";
     color: #777777;
     padding: 0.5em;
+
     text-align: center;
+    border-bottom: 1px solid #dedede;
 }
 
 .pricing-option h2 {
@@ -162,6 +190,13 @@ body {
     font-weight: bold;
     color: #777777;
 }
+.pricing-option > p{
+    font-weight: normal !important;
+    padding:0.5em;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 
 .pricing-option .buttons{
     display: grid;
