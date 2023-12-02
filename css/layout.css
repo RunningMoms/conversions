@@ -28,6 +28,25 @@ body {
     grid-row-gap: 20px;
 }
 
+#banner{
+    position: relative;
+}
+#logo{
+    position: absolute;
+    border-radius: 50%;
+
+    bottom: 25px;
+    left: +10%;
+    display: block;
+}
+@media (max-width: 900px) {
+    #logo {
+        bottom: 100px;
+        width: 15vw;
+        height: 15vw;
+    }
+}
+
 #video{
     grid-area: video;
 }
