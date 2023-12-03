@@ -41,7 +41,9 @@ body {
 }
 @media (max-width: 900px) {
     #logo {
-        bottom: 100px;
+        bottom: auto;
+        top: 20vw;
+        left: +7%;
         width: 15vw;
         height: 15vw;
     }
